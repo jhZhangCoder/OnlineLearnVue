@@ -5,22 +5,22 @@
             <img src="@/assets/st-bg.jpg" alt="some_text" style="height: 100%">
         </el-carousel-item>
         <el-carousel-item >
-            <img src="@/assets/ad-bg.jpg" alt="some_text" style="height: 100%">
-        </el-carousel-item>
-        <el-carousel-item >
             <img src="@/assets/tc-bg.jpg" alt="some_text" style="height: 100%">
         </el-carousel-item>
+        <el-carousel-item >
+            <img src="@/assets/ad-bg.jpg" alt="some_text" style="height: 100%">
+        </el-carousel-item>
     </el-carousel>
-    <div style="margin-bottom: 20px;"> 
-        <div id="tips">
+    <div style="margin-bottom: 20px;margin-top: 80px"> 
+        <div id="tips"style="background-color: rgba(248, 247, 247, 0.5);border: 0;">
             
             <b>
                 补充知识点
             </b>
         </div> 
-        <el-card v-for="item2 in points " class="box-card" :key="item2.id">
+        <el-card v-for="item2 in points " class="box-card" :key="item2.id" style="background-color: rgba(248, 247, 247, 0.5);border: 0;">
             <div slot="header" class="clearfix">
-                <span>{{ item2.title }}</span> 
+                <span> {{ item2.title }}</span> 
             </div>
             <div class="text item">
                 {{ item2.content }} 
@@ -55,9 +55,6 @@ export default {
 .con{
     height: 100vh!important;
     overflow-y: auto!important;
-}
-.el-card{
-    margin-top: 20px;  
 }
 
 #tips {

@@ -4,7 +4,7 @@
             <div class="cn">
                 <div class="title">
 
-                    在线教育学习系统（管理员）
+                    个人学习助手（管理员）
                 </div>
 
                 <div class="blockl">

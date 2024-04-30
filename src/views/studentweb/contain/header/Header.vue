@@ -1,6 +1,6 @@
 <template>
     <div>
-        <el-row :gutter="24" style="height: 80px">
+        <!-- <el-row :gutter="24" style="height: 80px">
             <el-col :span="10" style="text-align: right;">
                 <img src="@/assets/03.png" style="
                     width: 40px;
@@ -13,9 +13,10 @@
                 " />
             </el-col>
             <el-col :span="14" style="font-size: 32px;font-weight: 600;text-align: left;margin: 15px 0 0 0;">
-                在线教育学习系统
+                个人学习助手
             </el-col>
-        </el-row>
+        </el-row> -->
+        
 
         <div style="margin: 0 -20px 0 -20px;padding: 0;">
             <el-menu :background-color="'black'" :text-color="'white'" :active-text-color="'white'" :default-active="'1'"
@@ -79,14 +80,14 @@
 
             <el-dialog  :modal-append-to-body='false' title="修改密码" :visible.sync="dialogFormVisible" width="30%" :before-close="handleClose">
 
-                <el-input placeholder="请输入原密码" v-model="changePassword.password" show-password></el-input>
+                <el-input placeholder="请输入原密码"  v-model="changePassword.password" show-password></el-input>
                 <p>
 
                     <el-input placeholder="请输入新密码" v-model="changePassword.newPassword" show-password></el-input>
                 </p>
                 <span slot="footer" class="dialog-footer">
                     <el-button @click="dialogFormVisible = false"> 取 消</el-button>
-                    <el-button type="primary" @click="submit(changePassword)"> 确 定</el-button>
+                    <el-button type="primary" @click="submit(changePassword)" style="background-color: gray;"> 确 定</el-button>
                 </span>
             </el-dialog>
 
@@ -199,7 +200,7 @@ h1 {
     /* position: relative; */
     margin: 0;
     padding-left: 0;
-    background-color: black;
+    
 }
 
 .el-menu--horizontal>.el-menu-item[data-v-15228138] {
@@ -209,7 +210,7 @@ h1 {
     margin: 0;
     border-bottom: 2px solid transparent;
     color: #ffffff;
-    background-color: black;
+   
 }
 
 /* .el-menu--horizontal>.el-submenu .el-submenu__title {
@@ -223,5 +224,31 @@ h1 {
 .cn {
     display: flex;
     justify-content: space-between;
+}   
+
+.el-button {
+    width: 48%;
+    animation: tada 1s;
+}
+.el-button:active{
+  animation: none;
+}
+
+@keyframes tada {
+    from {
+        transform: scale3d(1, 1, 1)
+    }
+    10%, 20% {
+        transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg)
+    }
+    30%, 50%, 70%, 90% {
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)
+    }
+    40%, 60%, 80% {
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)
+    }
+    to {
+        transform: scale3d(1, 1, 1)
+    }
 }
 </style>

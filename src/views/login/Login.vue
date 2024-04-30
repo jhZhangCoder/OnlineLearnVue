@@ -1,5 +1,23 @@
 <template>
     <div class="login_container">
+        <vue-particles
+        class="login-background"
+        color="#97D0F2"
+        :particleOpacity="0.7"
+        :particlesNumber="50"
+        shapeType="circle"
+        :particleSize="4"
+        linesColor="#97D0F2"
+        :linesWidth="1"
+        :lineLinked="true"
+        :lineOpacity="0.4"
+        :linesDistance="150"
+        :moveSpeed="3"
+        :hoverEffect="true"
+        hoverMode="grab"
+        :clickEffect="true"
+        clickMode="push">
+        </vue-particles>
 
         <div class="login_box">
             <el-row :gutter="24">
@@ -11,7 +29,7 @@
 
                     </div>
                     <!-- 登录表单区域 -->
-                    <el-form :model="tabUser" style="background-color: #fff;padding: 20px 60px 20px 60px;border-radius: 25px;opacity: 0.95;">
+                    <el-form :model="tabUser" style="background-color: rgba(248, 247, 247, 0.7);padding: 20px 60px 20px 60px;border-radius: 25px;opacity: 0.95;">
                         <div style="text-align: center;">
                             <img src="@/assets/03.png" style="
                                     width: 33px;
@@ -24,7 +42,7 @@
                                 " />
                             <span style="font-size: 28px; font-weight: 600;">
     
-                                在线教育学习系统
+                                个人学习助手
                             </span>
                         </div>
                         <br>
@@ -40,10 +58,10 @@
                                 v-model="tabUser.password"></el-input>
                         </el-form-item>
                         <br>
-                        <el-button type="primary" @click="login(tabUser)">
+                        <el-button type="info" @click="login(tabUser)">
                             登录
                         </el-button>
-                        <el-button type="success" @click="dialog = true">
+                        <el-button @click="dialog = true">
                             注册
                         </el-button>
                     </el-form>
@@ -83,7 +101,7 @@
                 </el-form-item>
             </el-form>
             <div style="width: 100%; text-align: center">
-                <el-button type="success" @click="confirm(form)"> 注册新账号</el-button>
+                <el-button type="info" @click="confirm(form)"> 注册新账号</el-button>
             </div>
         </el-drawer>
 
@@ -263,7 +281,7 @@ export default {
     width: 100%;
     overflow-y: auto;
     height: 100%;
-    background: url("../../assets/login-bg.png") center top / cover no-repeat;
+    /* background: url("../../assets/login-bg.png") center top / cover no-repeat; */
     z-index: 100;
 
 }
@@ -286,8 +304,11 @@ export default {
 
 .el-button {
     width: 48%;
+    animation: tada 1s;
 }
-
+.el-button:active{
+  animation: none;
+}
 .code {
     width: 45%;
 }
@@ -305,4 +326,34 @@ export default {
 .rememberMe {
     color: #fff;
 }
+
+.login-background {
+        background: url("../../assets/login-bg.png") no-repeat;
+        background-size: 100% 100%;
+        width: 100%;
+        height: 100%; /**宽高100%是为了图片铺满屏幕 */
+        z-index: -1;
+        position: absolute;
+        
+    }
+
+    @keyframes tada {
+    from {
+        transform: scale3d(1, 1, 1)
+    }
+    10%, 20% {
+        transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg)
+    }
+    30%, 50%, 70%, 90% {
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)
+    }
+    40%, 60%, 80% {
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)
+    }
+    to {
+        transform: scale3d(1, 1, 1)
+    }
+}
+
+
 </style>

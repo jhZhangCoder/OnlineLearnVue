@@ -19,6 +19,11 @@ Vue.use(mavonEditor)
 Vue.use(global)
 Vue.config.productionTip = false
 
+
+import VueParticles from 'vue-particles'
+Vue.use(VueParticles)
+
+
 new Vue({
   router,
   store,
