@@ -1,24 +1,24 @@
 <template>
-    <div>
-        <div class="subject">
+    <div style="background-color: rgb(240, 248, 255, 0.5)">
+        <div class="subject" >
             <h1 class="nothomework">已完成作业详情</h1>
         </div>
         <el-divider></el-divider>
         <div v-for=" h in HomeWork " :key="h.id">
-            <h2>{{h.subjectName}}</h2>
-            <h2>{{h.userName}}</h2>
-            <p>作业标题：{{h.title}}</p>
-            <p> 完成时间：{{h.completionTime}}</p>
-            <p> 批改状态:{{h.mode=='0'?'未批改':'已批改'}}</p>
+            <h2 style="margin-left: 40px;">{{h.subjectName}}</h2>
+            <h2 style="margin-left: 40px;">{{h.userName}}</h2>
+            <p style="margin-left: 40px;">作业标题：{{h.title}}</p>
+            
 <!--            <p>{{h.content}}</p>-->
             <!-- <router-link to="/markdown"> -->
                 <div class="bt">
-                    <el-button  type="primary" plain @click="addDetail(h,'zuoye')"> 查看详情</el-button> 
-                    <el-button  type="primary" plain @click="addDetail(h,'daan')"> 查看参考答案</el-button>
+                    <el-button  type="info" style="background-color: black;" @click="addDetail(h,'zuoye')"> 查看详情</el-button> 
+                    <el-button  type="info" style="background-color: black;"  @click="addDetail(h,'daan')"> 查看参考答案</el-button>
                 </div>
             <!-- </router-link> -->
-
-            <el-divider> 提交时间：</el-divider>
+            <p  class="bt" style="color: white; font-size: 15px;margin-right: 100px;"> 完成时间：{{h.completionTime}}</p>
+            <p  class="bt" style="color: white; font-size: 15px;margin-right: 100px;"> 批改状态:{{h.mode=='0'?'未批改':'已批改'}}</p>
+            <el-divider></el-divider>
         </div>
         <el-pagination
                 @size-change="handleSizeChange"
@@ -27,7 +27,8 @@
                 :page-sizes="[10, 20, 30, 40]"
                 :page-size="page.pageSize"
                 layout="total, sizes, prev, pager, next, jumper"
-                :total="HomeWork.length">
+                :total="HomeWork.length"
+                style="text-align: center;">
         </el-pagination>
 
     </div>
@@ -88,12 +89,32 @@
     display: flex;
     justify-content: center;
 }
-    .bt{
-        display: flex;
-        justify-content: center;
-    }
+.bt {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 100px;
+    
+}
     .nothomework{
-        display: flex;
-        justify-content: center;
+    display: flex;
+    justify-content: center;
+    font-family: 'Microsoft YaHei';
+    text-align: center;
+    font-size: 40px;
+    background: -webkit-linear-gradient(left, rgb(245, 245, 245), rgb(19, 19, 19)) 0 0 no-repeat; /*设置线性渐变*/
+    -webkit-background-size: 160px; /*设置背景大小*/
+    -webkit-background-clip: text; /*背景被裁剪到文字*/
+    -webkit-text-fill-color: rgba(0, 0, 0, 0.7); /*设置文字的填充颜色*/
+    -webkit-animation: shine 3s infinite; /*设置动画*/
     }
+
+    @-webkit-keyframes shine {
+    /*创建动画*/
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
 </style>

@@ -1,13 +1,14 @@
-<template>
-    <div style="padding: 20px;">
+<template >
+    <div style="padding: 20px;background-color: rgba(59, 58, 58, 0.615);">
 
-        <el-button type="danger" @click="goOthers()"> 返回</el-button>
-
-        <el-button type="success" @click="submit(homdeworkData)"> 提交</el-button>
-        <div>
+       
+        <div style="margin-top: 60px;">
             <mavon-editor :subfield="false" :autofocus="false" v-model="homdeworkData.content" ref="md" style="width: 99%;">
             </mavon-editor>
         </div>
+        <el-button type="danger" class="bt" @click="goOthers()"> 返回</el-button>
+
+        <el-button type="success" class="bt" @click="submit(homdeworkData)"> 提交</el-button>
     </div>
 </template>
 
@@ -82,4 +83,12 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.bt{
+background-color: black;
+border: 0;
+margin-top: 30px;
+margin-right: 30px;
+float: right;
+}
+</style>

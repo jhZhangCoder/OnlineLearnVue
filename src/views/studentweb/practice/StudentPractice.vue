@@ -38,6 +38,7 @@
                             </template>
                         </el-table-column>
                     </el-table>
+                    <el-divider></el-divider>
                     <el-pagination
                             @size-change="handleSizeChange"
                             @current-change="handleCurrentChange"
@@ -45,7 +46,8 @@
                             :page-sizes="[10, 20, 30, 40]"
                             :page-size="page.pageSize"
                             layout="total, sizes, prev, pager, next, jumper"
-                            :total="ScoreData.length">
+                            :total="ScoreData.length"
+                            style="text-align: center;">
                     </el-pagination>
                 </div>
 
