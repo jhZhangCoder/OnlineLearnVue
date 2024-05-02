@@ -100,7 +100,7 @@
     justify-content: center;
     font-family: 'Microsoft YaHei';
     text-align: center;
-    font-size: 40px;
+    font-size: 28px;
     background: -webkit-linear-gradient(left, rgb(245, 245, 245), rgb(19, 19, 19)) 0 0 no-repeat; /*设置线性渐变*/
     -webkit-background-size: 160px; /*设置背景大小*/
     -webkit-background-clip: text; /*背景被裁剪到文字*/
