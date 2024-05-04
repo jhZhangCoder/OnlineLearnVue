@@ -16,7 +16,7 @@
 
         <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="page.page"
             :page-sizes="[10, 20, 30, 40]" :page-size="page.pageSize" layout="total, sizes, prev, pager, next, jumper"
-            :total="ApplicantHistory.length">
+            :total="ApplicantHistory.length"style="text-align: center;margin-top:30px">
         </el-pagination>
     </div>
 </template>

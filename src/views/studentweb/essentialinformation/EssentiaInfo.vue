@@ -1,8 +1,8 @@
 <template>
     <div>
-    <el-descriptions class="margin-top" title="用户信息" :column="3" :size="size" border>
+    <el-descriptions class="margin-top" title="用户信息"style="color:white" :column="3" :size="size" border>
         <template slot="extra">
-            <el-button type="primary" size="small" @click="alertpersonal()"> 编辑</el-button>
+            <el-button type="info" size="small" @click="alertpersonal()"> 编辑</el-button>
         </template>
         <el-descriptions-item>
             <template slot="label">
@@ -62,7 +62,7 @@
             </el-form>
             <div slot="footer" class="dialog-footer">
                 <el-button @click="dialogFormVisible = false"> 取 消</el-button>
-                <el-button type="primary" @click="submit(Info)"> 确 定</el-button>
+                <el-button type="info" style="background-color: black;" @click="submit(Info)"> 确 定</el-button>
             </div>
         </el-dialog>
     </div>
