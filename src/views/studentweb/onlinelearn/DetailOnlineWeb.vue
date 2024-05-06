@@ -50,12 +50,12 @@
                             ref="videoPlayer" :playsinline="true" :options="playerOptions[count]"
                             @play="onPlayerPlay($event, index)" @pause="onPlayerPause($event)"></video-player>
 
-                        <div style="margin: 20px 0;"></div>
+                        <div style="margin: 20px;"></div>
 
                         提问： <p><el-input type="textarea" placeholder="请输入内容" v-model="Ask.content" maxlength="300"
                                 show-word-limit></el-input>
                         </p>
-                        <el-button type="success" @click="answer(Ask)"> 提问</el-button>
+                        <el-button style="background-color: black;color: rgb(255, 255, 255);float: right;" @click="answer(Ask)"> 提问</el-button>
 
                         <div style="margin: 200px 0;"></div>
                     </div>
@@ -70,8 +70,8 @@
                             <el-row :gutter="24">
                                 <el-col :span="21">
 
-                                    <el-button class="el" @click="choose(index)"
-                                        style="width: 100%; font-size: 11px; text-align: left;">{{
+                                    <el-button  class="el" @click="choose(index)"
+                                        style="background-color: black;color: rgb(255, 255, 255); width: 100%; font-size: 11px; text-align: left;margin-top: 10px;">{{
             item.topic | ellipsis }}</el-button>
                                 </el-col>
                                 <el-col :span="3">
