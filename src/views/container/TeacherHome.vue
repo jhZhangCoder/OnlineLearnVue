@@ -20,5 +20,9 @@ export default {
 </script>
 
 <style scoped>
-
+img
+{
+  opacity:0.4;
+  filter:alpha(opacity=40); /*  IE8 及其更早版本 */
+}
 </style>

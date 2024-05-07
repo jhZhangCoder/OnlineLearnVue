@@ -1,7 +1,7 @@
 <template>
     <el-row class="aside">
         <el-col :span="24">
-            <el-menu :default-active="this.$route.path" background-color="#6A5ACD" text-color="#ffffff" :router="true"
+            <el-menu :default-active="this.$route.path" background-color="black" text-color="#ffffff" :router="true"
                 active-text-color="white">
                 <el-menu-item index="/teacherHome">
                     <i class="iconfont icon-r-home" style="font-size: 26px;color: white;"></i>

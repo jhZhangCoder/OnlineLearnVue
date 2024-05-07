@@ -1,75 +1,81 @@
 <template>
     <div>
         <el-menu :default-active="'1'" mode="horizontal" style="line-height: 60px">
-            <div class="cn">
-                <div class="title">
-
-                    个人学习助手（教师）
-                </div>
+            <div class="cn" style="background-color: yellowgreen">
+                <div class="title">个人学习助手（教师）</div>
 
                 <div class="blockl">
-
                     <el-submenu index="2">
                         <template slot="title">
                             <div class="demo-fit">
                                 <div class="block">
-                                    <i class="iconfont icon-r-user2" style="color: white;margin-right: 25px;font-size: 32px;"></i>
-
+                                    <i
+                                        class="iconfont icon-r-user2"
+                                        style="color: white; margin-right: 25px; font-size: 32px"
+                                    ></i>
                                 </div>
                             </div>
                         </template>
                         <el-menu-item index="/checkhomework" @click="logout()">退出</el-menu-item>
-                        <el-menu-item @click="change()"> 修改密码</el-menu-item>
+                        <el-menu-item @click="change()">修改密码</el-menu-item>
                     </el-submenu>
                 </div>
             </div>
         </el-menu>
 
-
         <div>
-            <el-dialog title="修改密码" :visible.sync="dialogFormVisible" width="30%" :before-close="handleClose">
-
-                <el-input placeholder="请输入原密码" v-model="changePassword.password" show-password></el-input>
+            <el-dialog
+                title="修改密码"
+                :visible.sync="dialogFormVisible"
+                width="30%"
+                :before-close="handleClose"
+            >
+                <el-input
+                    placeholder="请输入原密码"
+                    v-model="changePassword.password"
+                    show-password
+                ></el-input>
                 <p>
-                    <el-input placeholder="请输入新密码" v-model="changePassword.newPassword" show-password></el-input>
+                    <el-input
+                        placeholder="请输入新密码"
+                        v-model="changePassword.newPassword"
+                        show-password
+                    ></el-input>
                 </p>
                 <span slot="footer" class="dialog-footer">
-                    <el-button @click="dialogFormVisible = false"> 取 消</el-button>
-                    <el-button type="primary" @click="submit(changePassword)"> 确 定</el-button>
+                    <el-button @click="dialogFormVisible = false">取 消</el-button>
+                    <el-button type="info" @click="submit(changePassword)">确 定</el-button>
                 </span>
             </el-dialog>
-
-
         </div>
-
     </div>
 </template>
 
 <script>
-import Cookies from "js-cookie";
-import { password } from '../../../api/personal.js'
+import Cookies from 'js-cookie';
+import { password } from '../../../api/personal.js';
 
 export default {
-    name: "Header.vue",
+    name: 'Header.vue',
     data() {
         return {
             changePassword: {
                 password: '',
                 newPassword: '',
-                id: ''
+                id: '',
             },
             dialogFormVisible: false,
             info: {
                 password: '',
                 newPassword: '',
-                id: ''
+                id: '',
             },
             drawer: false,
-            url: 'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg'
-        }
+            url: 'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg',
+        };
     },
     created() {
-        this.changePassword.id = Cookies.get("userId")
+        this.changePassword.id = Cookies.get('userId');
     },
     methods: {
         handleClose(done) {
@@ -77,10 +83,10 @@ export default {
                 .then(_ => {
                     done();
                 })
-                .catch(_ => { });
+                .catch(_ => {});
         },
         change() {
-            this.dialogFormVisible = true
+            this.dialogFormVisible = true;
         },
 
         submit(da) {
@@ -88,27 +94,27 @@ export default {
                 if (resp.data.code == 200) {
                     this.$message({
                         message: '密码修改成功 ',
-                        type: 'success'
+                        type: 'success',
                     });
-                    this.dialogFormVisible = false
-                    this.studentquery(this.page)
+                    this.dialogFormVisible = false;
+                    this.studentquery(this.page);
                 } else {
                     this.$message.error('原密码错误');
                 }
-            })
+            });
         },
         logout() {
-            Cookies.remove('userId')
-            Cookies.remove('classId')
-            Cookies.remove('roleId')
-            this.$router.push('/login')
+            Cookies.remove('userId');
+            Cookies.remove('classId');
+            Cookies.remove('roleId');
+            this.$router.push('/login');
             this.$message({
                 message: '退出成功',
-                type: 'success'
+                type: 'success',
             });
-        }
-    }
-}
+        },
+    },
+};
 </script>
 
 <style scoped>
@@ -139,5 +145,37 @@ export default {
     color: #ffffff;
     position: absolute;
     font-size: 24px;
+}
+
+.el-button {
+    width: 48%;
+    animation: tada 1s;
+}
+.el-button:active {
+    animation: none;
+}
+
+@keyframes tada {
+    from {
+        transform: scale3d(1, 1, 1);
+    }
+    10%,
+    20% {
+        transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+    }
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    }
+    40%,
+    60%,
+    80% {
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    }
+    to {
+        transform: scale3d(1, 1, 1);
+    }
 }
 </style>

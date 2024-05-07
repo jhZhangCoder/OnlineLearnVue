@@ -77,7 +77,7 @@ export default {
             ClassData: [],
             page: {
                 page: 1, //初始页
-                pageSize: 10,    //    每页的数据
+                pageSize: 10,    //   每页的数据
                 userId: '',
                 roleId: ''
             },

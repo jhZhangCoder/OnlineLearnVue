@@ -24,7 +24,7 @@
                 </div>
 
                 <div v-if="tag != 'test'">
-                    <p class="demonstration">完成时间</p>
+                    <p class="demonstration">完成时间:</p>
                     <div>
                         <el-date-picker v-model="paramData.commitTime" value-format="yyyy-MM-dd HH:mm:ss" type="date"
                             placeholder="选择日期时间" align="right">
@@ -36,7 +36,7 @@
 
 
                 <div style="width: 45%;">
-                    <p>正题</p>
+                    <p>正题:</p>
                     <div>
                         <mavon-editor :subfield="false" :autofocus="false" v-model="paramData.content" ref="md"
                             style="width: 99%;height: 50vh;">
@@ -45,7 +45,7 @@
                 </div>
 
                 <div style="width: 45%">
-                    <p> 参考答案</p>
+                    <p> 参考答案:</p>
                     <div>
                         <mavon-editor :subfield="false" :autofocus="false" v-model="paramData.answer" ref="md"
                             style="width: 99%;height: 50vh;">
@@ -65,9 +65,9 @@
                 <el-input :disabled="mode == '已批改'" type="textarea" :rows="3" style="" placeholder="请shuru" v-model="paramData.remark">
                 </el-input>
             </div>
-            <div style="float: right;margin-right: 3%;margin-top: 10px;">
-                <el-button type="danger" @click="out()"> 返回</el-button>
-                <el-button :disabled="mode == '1'" type="success" @click="addTest(paramData)"> 提交</el-button>
+            <div style="float: right;margin-right: 3%;margin-top: 20px;">
+                <el-button type="info" @click="out()"> 返回</el-button>
+                <el-button :disabled="mode == '1'"  @click="addTest(paramData)"> 提交</el-button>
             </div> 
         </div>
     </div>
@@ -206,7 +206,7 @@ export default {
 .ce {
     display: flex;
     justify-content: space-around;
-
+    margin-top: 20px;
 
 }
 
