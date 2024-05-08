@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="margin-top: 20px;">
         <el-table
                 :data="tableData"
                 :default-sort="{prop: 'date', order: 'descending'}"
@@ -52,7 +52,7 @@
                 :page-sizes="[10, 20, 30, 40]"
                 :page-size="page.pageSize"
                 layout="total, sizes, prev, pager, next, jumper"
-                :total="tableData.length">
+                :total="tableData.length"style="text-align: center;margin-left: 40px; margin-top: 40px">
         </el-pagination>
 
     </div>

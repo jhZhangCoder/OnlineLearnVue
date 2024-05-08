@@ -1,7 +1,7 @@
 <template>
     <div>
-        <el-button type="primary" @click="ToTest"> 发布作业</el-button>
-        <el-table :data="ClassData" :default-sort="{ prop: 'date', order: 'descending' }" style="width: 100%">
+        
+        <el-table :data="ClassData" :default-sort="{ prop: 'date', order: 'descending' }" style="width: 100%;margin-top: 20px;">
             <el-table-column sortable fixed prop="subjectName" label="科目" width="100">
             </el-table-column>
             <el-table-column prop="title" label="作业标题">
@@ -16,16 +16,19 @@
             </el-table-column>
             <el-table-column label="操作" width="580" fixed="right">
                 <template slot-scope="scope">
-                    <el-button @click="handleDetail(scope.$index, scope.row)" type="primary"> 查看详情</el-button>
-                    <el-button @click="handleDelete(scope.$index, scope.row)" type="danger"> 删除</el-button>
-                    <el-button @click="homewordDo(scope.$index, scope.row)" type="success"> 已完成</el-button>
+                    <el-button @click="handleDetail(scope.$index, scope.row)" type="info" style="background-color: black;"> 查看详情</el-button>
                     <el-button @click="homeworkNotDo(scope.$index, scope.row)" type="info"> 未完成</el-button>
+                    <el-button @click="homewordDo(scope.$index, scope.row)" > 已完成</el-button>
+                    <el-button @click="handleDelete(scope.$index, scope.row)" type="danger"> 删除</el-button>
                 </template>
             </el-table-column>
         </el-table>
+
+        <el-button @click="ToTest" style="float: right;margin-top: 20px;"> 发布作业</el-button>
+
         <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="page.page"
             :page-sizes="[10, 20, 30, 40]" :page-size="page.pageSize" layout="total, sizes, prev, pager, next, jumper"
-            :total="ClassData.length">
+            :total="ClassData.length" style="text-align: center;margin-top:80px">
         </el-pagination>
 
 
@@ -54,13 +57,13 @@
                     <el-table-column property="mode" label="状态" width="200"></el-table-column>
                     <el-table-column label="操作" width="260" fixed="right">
                         <template slot-scope="scope">
-                            <el-button @click="DetailStudentHomework(scope.$index, scope.row)"  type="primary"> 查看详情</el-button>
+                            <el-button @click="DetailStudentHomework(scope.$index, scope.row)" > 查看详情</el-button>
                         </template>
                     </el-table-column>
                 </el-table>
                 <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange"
                     :current-page="homework.page" :page-sizes="[10, 20, 30, 40]" :page-size="homework.pageSize"
-                    layout="total, sizes, prev, pager, next, jumper" :total="DoHomework.length">
+                    layout="total, sizes, prev, pager, next, jumper" :total="DoHomework.length" >
                 </el-pagination>
             </el-dialog>
         </div>

@@ -3,7 +3,7 @@
         <el-table
                 :data="tableData"
                 :default-sort="{prop: 'date', order: 'descending'}"
-                style="width: 100%">
+                style="width: 100%;margin-top: 20px;">
             <el-table-column
                     sortable
                     prop="account"
@@ -28,7 +28,8 @@
             <el-table-column label="操作" width="260" fixed="right">
                 <template slot-scope="scope">
                     <el-button
-                            type="danger"
+                            style="background-color: black;"
+                            type="info"
                             @click="handleDelete(scope.$index, scope.row)"> 移出该学生
                     </el-button>
                 </template>
@@ -41,7 +42,7 @@
                 :page-sizes="[10, 20, 30, 40]"
                 :page-size="page.pageSize"
                 layout="total, sizes, prev, pager, next, jumper"
-                :total="tableData.length">
+                :total="tableData.length"style="text-align: center;margin-top:30px">
         </el-pagination>
 
     </div>

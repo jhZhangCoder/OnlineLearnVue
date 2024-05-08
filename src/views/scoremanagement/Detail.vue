@@ -1,7 +1,7 @@
-<template>
-    <div>
+<template >
+    <div >
 
-        <div>
+        <div >
 
             <div class="cls">
                 <div v-if="tag = 'homework'">

@@ -22,10 +22,10 @@
             ></el-table-column>
             <el-table-column label="操作" width="520" fixed="right">
                 <template slot-scope="scope">
-                    <el-button @click="handleEdit(scope.$index, scope.row)" type="primary">
+                    <el-button @click="handleEdit(scope.$index, scope.row)" >
                         查看详情
                     </el-button>
-                    <el-button @click="handleHomework(scope.$index, scope.row)" type="warning">
+                    <el-button @click="handleHomework(scope.$index, scope.row)" type="info" style="background-color: black;">
                         已完成情况
                     </el-button>
                     <el-button @click="handleNotHomwork(scope.$index, scope.row)" type="info">
