@@ -156,15 +156,7 @@ export default {
      border-left: 1px solid rgba(255, 255, 255, 0.5);
      backdrop-filter: blur(5px);
  }
-
-el-button {
-    display: inline-block;
-}
-
-.course {
-    display: inline-block;
-}
-.card{
+ .card{
     transition: 0.5s;
 }
 
@@ -174,6 +166,15 @@ el-button {
   transform: perspective(500px) rotateX(25deg);
   /* 设置一个下拉阴影，并设置阴影的颜色*/
   box-shadow: 0 35px 0px 10px rgba(0, 0, 0,0.7);
+}
+
+
+el-button {
+    display: inline-block;
+}
+
+.course {
+    display: inline-block;
 }
 
 

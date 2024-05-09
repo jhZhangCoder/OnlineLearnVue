@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <router-link to="/pdetailteacher"><el-button type="primary"> 发布知识点</el-button></router-link>
+    <div style="overflow:auto;height: 480px;">
+        <router-link to="/pdetailteacher"><el-button style="float: right;margin-bottom: 20px;"> 发布知识点</el-button></router-link>
         <el-table :data="knowData" style="width: 100%">
             <el-table-column type="expand">
                 <template slot-scope="props">
@@ -41,15 +41,15 @@
             </el-table-column>
             <el-table-column label="操作" width="260" fixed="right">
                 <template slot-scope="scope">
-                    <el-button @click="EditKnowPoint(scope.$index, scope.row)"  type="success"> 编辑</el-button>
-                    <el-button type="danger" @click="DeleteKnowPoint(scope.$index, scope.row)"> 删除</el-button>
+                    <el-button @click="EditKnowPoint(scope.$index, scope.row)"  > 编辑</el-button>
+                    <el-button type="info" @click="DeleteKnowPoint(scope.$index, scope.row)"> 删除</el-button>
                 </template>
             </el-table-column>
         </el-table>
-
+        
         <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="page.page"
             :page-sizes="[10, 20, 30, 40]" :page-size="page.pageSize" layout="total, sizes, prev, pager, next, jumper"
-            :total="knowData.length">
+            :total="knowData.length"style="text-align: center;margin-top:30px">
         </el-pagination>
     </div>
 </template>

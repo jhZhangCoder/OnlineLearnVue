@@ -2,7 +2,7 @@
     <div>
         <el-descriptions class="margin-top" :disabled=flage title="用户信息" :column="3" :size="size" border>
             <template slot="extra">
-                <el-button type="primary" size="small" @click="alertpersonal()"> 修改个人信息</el-button>
+                <el-button  size="small" @click="alertpersonal()"> 修改个人信息</el-button>
             </template>
             <el-descriptions-item>
                 <template slot="label">
@@ -30,14 +30,14 @@
                     <i class="el-icon-tickets"></i>
                     性别
                 </template>
-                <el-tag size="small">男</el-tag>
+                <el-tag size="small" type="info">男</el-tag>
             </el-descriptions-item>
             <el-descriptions-item v-if="Info.sex == 1">
                 <template slot="label">
                     <i class="el-icon-tickets"></i>
                     性别
                 </template>
-                <el-tag size="small">女</el-tag>
+                <el-tag size="small" type="info" >女</el-tag>
             </el-descriptions-item>
             <el-descriptions-item>
                 <template slot="label">
@@ -66,7 +66,7 @@
             </el-form>
             <div slot="footer" class="dialog-footer">
                 <el-button @click="dialogFormVisible = false"> 取 消</el-button>
-                <el-button type="primary" @click="submit(Info)"> 确 定</el-button>
+                <el-button type="info" @click="submit(Info)"> 确 定</el-button>
             </div>
         </el-dialog>
 

@@ -1,12 +1,9 @@
 <template>
     <div style="padding: 20px;">
-        <router-link to="/personalinfo">
-            <el-button type="danger"> 返回</el-button>
-        </router-link>
-        <el-button type="success" @click="addTest(paramData)"> 提交</el-button>
+
         <p>请选择班级</p>
         <div>
-            <el-select v-model="paramData.classId" filterable placeholder="请选择">
+            <el-select v-model="paramData.classId" filterable placeholder="请输入">
                 <el-option
                         v-for="item in queryCla"
                         :key="item.classId"
@@ -15,13 +12,13 @@
                 </el-option>
             </el-select>
         </div>
-        <p>请输入补充知识点标题：<el-input
+        <p>请输入补充知识点标题：<el-input style="margin-top: 20px;"
                 placeholder="请输入标题"
                 v-model="paramData.title"
                 clearable>
         </el-input></p>
         正题如下：
-        <div>
+        <div style="margin-top: 20px;">
             <mavon-editor
                     :subfield="false"
                     :autofocus="false"
@@ -30,6 +27,12 @@
                     style="width: 99%;"
             >
             </mavon-editor>
+            <div style="float: right; margin-right: 20px;margin-top: 20px;">
+                <router-link to="/personalinfo">
+                    <el-button type="info"> 返回</el-button>
+                </router-link>
+                <el-button @click="addTest(paramData)" style=" margin-left: 20px;"> 提交</el-button>
+            </div>
         </div>
     </div>
 

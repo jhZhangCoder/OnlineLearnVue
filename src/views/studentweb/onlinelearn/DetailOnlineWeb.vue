@@ -1,6 +1,6 @@
 <template>
-    <div style="min-height: 1080px; padding: 10px;">
-        <el-button type="primary" @click="addVideo()" v-if="roleId == 2"> 新增视频</el-button>
+    <div style=" padding: 10px;overflow:auto;height: 480px;">
+        
         <div style="height: 20px"></div>
         <div class="containvideo">
 
@@ -36,7 +36,7 @@
 
                 <span slot="footer" class="dialog-footer">
                     <el-button @click="goDealDialogVisible = false, cancelBtn"> 取 消</el-button>
-                    <el-button type="primary" @click="submit()"> 确 定</el-button>
+                    <el-button type="info" @click="submit()"> 确 定</el-button>
                 </span>
             </el-dialog>
             <el-row :gutter="24" style="width: 100%;">
@@ -60,8 +60,9 @@
                         <div style="margin: 200px 0;"></div>
                     </div>
                 </el-col>
+                <el-button  @click="addVideo()" v-if="roleId == 2" style="text-align: center;margin-left: 50px;margin-top: 15px;"> 新增视频</el-button>
                 <el-col :span="6">
-                    <div >
+                    <div style="margin-right: 10px;">
 
                         <div id="video-title"> 目录</div>
                         <hr>
@@ -77,7 +78,7 @@
                                 <el-col :span="3">
 
                                     <el-button type="danger" size="small" @click="deletOneVideo(item.id)"
-                                        v-if="roleId == 2">
+                                        v-if="roleId == 2"style="margin-top:9px">
                                         <i class="iconfont icon-r-delete"></i>
                                     </el-button>
                                 </el-col>
