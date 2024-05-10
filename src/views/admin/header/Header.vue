@@ -32,7 +32,7 @@
                 <el-input placeholder="请重新输入新密码" v-model="changePassword.conPassword" show-password></el-input>
                 <span slot="footer" class="dialog-footer">
                     <el-button @click="dialogFormVisible = false"> 取 消</el-button>
-                    <el-button type="primary" @click="submit(changePassword)"> 确 定</el-button>
+                    <el-button type="info" @click="submit(changePassword)"> 确 定</el-button>
                 </span>
             </el-dialog>
 

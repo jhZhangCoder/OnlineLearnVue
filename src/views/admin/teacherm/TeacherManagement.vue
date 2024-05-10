@@ -1,6 +1,6 @@
 <template>
     <div>
-        <el-button type="primary" @click="addTeacher()"> 新增教师</el-button><br><br>
+        <el-button style="float: right;margin-bottom: 20px;" @click="addTeacher()"> 新增教师</el-button><br><br>
         <el-table :data="TeacherData" :default-sort="{ prop: 'date', order: 'descending' }" border style="width: 100%">
             <el-table-column sortable fixed prop="account" label="账号" width="180">
             </el-table-column>
@@ -20,7 +20,7 @@
 
             <el-table-column label="操作" width="260" fixed="right">
                 <template slot-scope="scope">
-                    <el-button @click="handleEdit(scope.$index, scope.row)" type="success">
+                    <el-button @click="handleEdit(scope.$index, scope.row)" type="info">
                         编辑
                     </el-button>
                     <el-button @click="handleDelete(scope.$index, scope.row)" type="danger"> 
@@ -63,7 +63,7 @@
             </el-form>
             <div slot="footer" class="dialog-footer">
                 <el-button @click="dialogFormVisible = false"> 取 消</el-button>
-                <el-button type="primary" @click="submitadd(form)"> 确 定</el-button>
+                <el-button type="info" @click="submitadd(form)"> 确 定</el-button>
             </div>
         </el-dialog>
 
@@ -72,7 +72,7 @@
 
         <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="page.pageNum"
             :page-sizes="[10, 20, 30, 40]" :page-size="page.pageSize" layout="total, sizes, prev, pager, next, jumper"
-            :total="TeacherData.length">
+            :total="TeacherData.length" style="text-align: center;margin-left: 40px; margin-top: 40px">
         </el-pagination>
     </div>
 </template>

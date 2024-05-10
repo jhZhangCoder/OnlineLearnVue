@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="margin-top: 20px;">
         <el-table :data="TeacherData" :default-sort="{ prop: 'date', order: 'descending' }" style="width: 100%">
             <el-table-column sortable fixed prop="title" label="作业标题">
             </el-table-column>
@@ -15,14 +15,14 @@
             <el-table-column label="操作" width="260" fixed="right">
                 <template slot-scope="scope">
                     <el-button
-                        type="primary" @click="handleEdit(scope.$index, scope.row)"> 查看</el-button>
+                         @click="handleEdit(scope.$index, scope.row)"> 查看</el-button>
                     <el-button type="danger" @click="handleDelete(scope.$index, scope.row)"> 删除</el-button>
                 </template>
             </el-table-column>
         </el-table>
         <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="page.pageNum"
             :page-sizes="[10, 20, 30, 40]" :page-size="page.pageSize" layout="total, sizes, prev, pager, next, jumper"
-            :total="TeacherData.length">
+            :total="TeacherData.length" style="text-align: center;margin-left: 40px; margin-top: 40px">
         </el-pagination>
     </div>
 </template>

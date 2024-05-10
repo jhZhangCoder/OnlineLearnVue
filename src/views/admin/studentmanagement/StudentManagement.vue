@@ -1,6 +1,6 @@
 <template>
     <div>
-        <el-button type="primary" @click="addStudent()"> 新增学生</el-button>
+        <el-button style="float: right;margin-bottom: 20px;" @click="addStudent()"> 新增学生</el-button>
         <div style="height: 20px"></div>
         <el-table :data="StudentData" :default-sort="{ prop: 'date', order: 'descending' }" style="width: 100%">
             <el-table-column sortable fixed prop="account" label="账号" width="180">
@@ -14,7 +14,7 @@
 
             <el-table-column label="操作" width="260" fixed="right">
                 <template slot-scope="scope">
-                    <el-button type="success" @click="handleEdit(scope.$index, scope.row)"> 编辑
+                    <el-button type="info" @click="handleEdit(scope.$index, scope.row)"> 编辑
                     </el-button>
                     <el-button type="danger" @click="handleDelete(scope.row.id)" style="background-color: #c52424"> 删除
                     </el-button>
@@ -49,7 +49,7 @@
             </el-form>
             <div slot="footer" class="dialog-footer">
                 <el-button @click="dialogFormVisible = false"> 取 消</el-button>
-                <el-button type="primary" @click="submit(form)"> 确 定</el-button>
+                <el-button type="info" @click="submit(form)"> 确 定</el-button>
             </div>
         </el-dialog>
 
@@ -75,14 +75,14 @@
             </el-form>
             <div slot="footer" class="dialog-footer">
                 <el-button @click="dialogFormVisibleEdit = false"> 取 消</el-button>
-                <el-button type="primary" @click="submitEdit(editStudent)"> 确 定</el-button>
+                <el-button type="info" @click="submitEdit(editStudent)"> 确 定</el-button>
             </div>
         </el-dialog>
 
 
         <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="page.pageNum"
             :page-sizes="[10, 20, 30, 40]" :page-size="page.pageSize" layout="total, sizes, prev, pager, next, jumper"
-            :total="StudentData.length">
+            :total="StudentData.length" style="text-align: center;margin-left: 40px; margin-top: 40px">
         </el-pagination>
     </div>
 </template>
