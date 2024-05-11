@@ -1,6 +1,6 @@
 <template>
     <div>
-        <el-button  @click="saveNewClass()" type="primary"> 新增班级</el-button>
+        <el-button  @click="saveNewClass()" style="float: right;margin-bottom: 20px;" > 新增班级</el-button>
 
         <el-dialog title="新增/编辑班级" :visible.sync="dialogFormVisible">
             <el-form :model="form">
@@ -15,7 +15,7 @@
             </el-form>
             <div slot="footer" class="dialog-footer">
                 <el-button @click="dialogFormVisible = false"> 取 消</el-button>
-                <el-button type="primary" @click="submit(form)"> 确 定</el-button>
+                <el-button type="info" @click="submit(form)"> 确 定</el-button>
             </div>
         </el-dialog>
 
@@ -45,7 +45,7 @@
             <el-table-column label="操作" width="260" fixed="right">
                 <template slot-scope="scope">
                     <el-button
-                            type="success"
+                            type="info"
                             @click="handleEdite(scope.$index, scope.row)"> 编辑
                     </el-button>
                     <el-button
@@ -62,7 +62,7 @@
                 :page-sizes="[10, 20, 30, 40]"
                 :page-size="page.pageSize"
                 layout="total, sizes, prev, pager, next, jumper"
-                :total="tableData.length">
+                :total="tableData.length" style="text-align: center;margin-left: 40px; margin-top: 40px">
         </el-pagination>
     </div>
 </template>

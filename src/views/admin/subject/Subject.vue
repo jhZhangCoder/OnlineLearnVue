@@ -1,6 +1,6 @@
 <template>
     <div>
-        <el-button type="primary" @click="addSubject()"> 新增科目</el-button>
+        <el-button style="float: right;margin-bottom: 20px;" @click="addSubject()"> 新增科目</el-button>
         <el-table :data="tableData.filter(data => !search || data.subjectName.toLowerCase().includes(search.toLowerCase()))"
             style="width: 100%">
             <el-table-column label="科目名称" prop="subjectName">
@@ -10,14 +10,14 @@
                     <el-input v-model="search" placeholder="输入关键字搜索" />
                 </template>
                 <template slot-scope="scope">
-                    <el-button @click="handleEdit(scope.$index, scope.row)"  type="success"> 编辑</el-button>
+                    <el-button @click="handleEdit(scope.$index, scope.row)"  > 编辑</el-button>
                     <el-button type="danger" @click="handleDelete(scope.$index, scope.row)"> 删除</el-button>
                 </template>
             </el-table-column>
         </el-table>
         <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="page.page"
             :page-sizes="[10, 20, 30, 40]" :page-size="page.pageSize" layout="total, sizes, prev, pager, next, jumper"
-            :total="tableData.length">
+            :total="tableData.length" style="text-align: center;margin-left: 40px; margin-top: 40px">
         </el-pagination>
 
 
@@ -30,7 +30,7 @@
             </el-form>
             <div slot="footer" class="dialog-footer">
                 <el-button @click="dialogFormVisible = false"> 取 消</el-button>
-                <el-button type="primary" @click="confirmSubeject(form)"> 确 定</el-button>
+                <el-button type="info" @click="confirmSubeject(form)"> 确 定</el-button>
             </div>
         </el-dialog>
 

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <el-table :data="KnowPointData" :default-sort="{ prop: 'date', order: 'descending' }" style="width: 100%">
+        <el-table :data="KnowPointData" :default-sort="{ prop: 'date', order: 'descending' }" style="width: 100%;margin-top: 20px;">
             <el-table-column sortable fixed prop="createTime" label="创建时间" width="180">
             </el-table-column>
             <el-table-column prop="title" label="知识点标题" width="180">
@@ -13,14 +13,14 @@
             </el-table-column>
             <el-table-column label="操作" width="260" fixed="right">
                 <template slot-scope="scope">
-                    <el-button @click="handleEdit(scope.$index, scope.row)"  type="primary"> 详情</el-button>
+                    <el-button @click="handleEdit(scope.$index, scope.row)"  type="info"> 详情</el-button>
                     <el-button @click="handleDelete(scope.$index, scope.row)"  type="danger"> 删除</el-button>
                 </template>
             </el-table-column>
         </el-table>
         <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="page.pageNum"
             :page-sizes="[10, 20, 30, 40]" :page-size="page.pageSize" layout="total, sizes, prev, pager, next, jumper"
-            :total="KnowPointData.length">
+            :total="KnowPointData.length"  style="text-align: center;margin-left: 40px; margin-top: 40px">
         </el-pagination>
     </div>
 </template>
